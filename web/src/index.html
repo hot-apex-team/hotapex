@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Survival</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎮 Study Survival</h1>
+        <p>수행평가 폭탄 속에서 살아남기</p>
+    </header>
+
+    <div class="container">
+        
+        <aside id="sidebar">
+            <h2>📅 수행평가 D-Day 관리</h2>
+            <div class="dday-input-box">
+                <input type="text" id="dday-title" placeholder="수행평가 이름 (예: 수학)">
+                <input type="date" id="dday-date">
+                <button id="dday-add-btn">추가</button>
+            </div>
+            <ul id="dday-list">
+                </ul>
+        </aside>
+
+        <main>
+            <section id="dashboard">
+                <h2>내 생존 상태</h2>
+                <div class="status-box">
+                    <p>생존 가능성: <span id="survival-rate">100%</span></p>
+                    <p class="warning-text">😇 현재 생존 상태 양호 (안전지대)</p>
+                </div>
+                <div class="dday-box">
+                    <p>🔥 남은 수행평가: <span class="highlight" id="assignment-count">0개</span></p>
+                </div>
+            </section>
+
+            <section id="todo-section">
+                <h2>오늘의 할 일 (To-do)</h2>
+                <div class="todo-input-box">
+                    <input type="text" id="todo-input" placeholder="할 일을 입력하세요...">
+                    <button id="todo-add-btn">추가</button>
+                </div>
+                <ul id="todo-list">
+                    </ul>
+            </section>
+
+            <section id="timer-section">
+                <h2>공부 시간 측정기</h2>
+                <div class="timer-display">00:00:00</div>
+                <div class="timer-buttons">
+                    <button id="start-btn">시작</button>
+                    <button id="stop-btn">종료</button>
+                    <button id="reset-btn">리셋</button>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

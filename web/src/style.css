@@ -1,0 +1,192 @@
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ff4757;
+    margin-bottom: 5px;
+}
+
+/* 💻 화면 레이아웃: 사이드바와 메인을 가로로 배치 */
+.container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px; /* 사이드바가 생겨서 전체 너비를 키움 */
+    align-items: flex-start;
+}
+
+/* 👈 사이드바 디자인 */
+#sidebar {
+    flex: 1; /* 너비 비율 (1) */
+    background-color: #2f3542;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.dday-input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.dday-input-box input {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background-color: #747d8c;
+    color: white;
+}
+
+#dday-add-btn {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background-color: #1e90ff; /* 파란색 추가 버튼 */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#dday-list {
+    list-style: none;
+    padding: 0;
+}
+
+#dday-list li {
+    padding: 10px;
+    background-color: #3f4656;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dday-tag {
+    background-color: #ff4757;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* 🎯 메인 대시보드 디자인 */
+main {
+    flex: 1.5; /* 너비 비율 (1.5) - 사이드바보다 조금 더 넓게 */
+    width: 100%;
+}
+
+section {
+    background-color: #2f3542;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    color: #ffa502;
+    border-bottom: 1px solid #4f5664;
+    padding-bottom: 8px;
+}
+
+.status-box {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+#survival-rate {
+    color: #ff4757;
+    font-size: 2rem;
+}
+
+.warning-text {
+    font-size: 1rem;
+    color: #ff7f50;
+}
+
+.todo-input-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: #747d8c;
+    color: white;
+}
+
+#todo-add-btn {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    background-color: #2ed573;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+#todo-list li {
+    padding: 10px;
+    background-color: #3f4656;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.timer-display {
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #1e90ff;
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.timer-buttons button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#start-btn { background-color: #2ed573; }
+#stop-btn { background-color: #ff4757; }
+#reset-btn { background-color: #1e90ff; }
