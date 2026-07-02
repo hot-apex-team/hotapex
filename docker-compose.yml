@@ -10,7 +10,7 @@ services:
       MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: study_survival_db # Study Survival 전용 데이터베이스 생성
     ports:
-      - "3306:3306"                     # 내 컴퓨터와 컨테이너 간의 DB 포트 연결
+      - "3308:3306"                     # 내 컴퓨터와 컨테이너 간의 DB 포트 연결
     volumes:
       - ./mysql/data:/var/lib/mysql     # 학생들의 생존 상태 및 디데이 데이터를 안전하게 보존 (볼륨 마운트)
       - ./mysql/conf:/etc/mysql/conf.d   # MySQL 세부 환경 설정 파일 매핑
