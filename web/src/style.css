@@ -20,18 +20,16 @@ header h1 {
     margin-bottom: 5px;
 }
 
-/* 💻 화면 레이아웃: 사이드바와 메인을 가로로 배치 */
 .container {
     display: flex;
     gap: 30px;
     width: 100%;
-    max-width: 900px; /* 사이드바가 생겨서 전체 너비를 키움 */
+    max-width: 900px;
     align-items: flex-start;
 }
 
-/* 👈 사이드바 디자인 */
 #sidebar {
-    flex: 1; /* 너비 비율 (1) */
+    flex: 1; 
     background-color: #2f3542;
     border-radius: 12px;
     padding: 20px;
@@ -57,7 +55,7 @@ header h1 {
     padding: 8px;
     border-radius: 6px;
     border: none;
-    background-color: #1e90ff; /* 파란색 추가 버튼 */
+    background-color: #1e90ff; 
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -86,9 +84,8 @@ header h1 {
     font-size: 0.9rem;
 }
 
-/* 🎯 메인 대시보드 디자인 */
 main {
-    flex: 1.5; /* 너비 비율 (1.5) - 사이드바보다 조금 더 넓게 */
+    flex: 1.5; 
     width: 100%;
 }
 
