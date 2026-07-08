@@ -11,7 +11,7 @@ Study Survival은 수행평가와 과제가 많은 고등학생을 위한 수행
 🎯 마감일에 따른 직관적인 진행 상태 표시
 
 ## 🛠️ 프로젝트 폴더 구조 🛠️ 
-
+```text
 my-team-project/
 │
 ├── web/                    # 웹 화면(HTML, CSS, JavaScript)
