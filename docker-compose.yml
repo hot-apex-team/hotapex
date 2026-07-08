@@ -1,37 +1,37 @@
 version: '3.8'
 
 services:
-  # 1. 데이터베이스 컨테이너 (MySQL)
+  # MySQL 데이터베이스 컨테이너
   mysql:
-    build: ./mysql                      # mysql 폴더 안에 있는 Dockerfile을 기반으로 빌드
+    build: ./mysql
     container_name: study-survival-db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: study_survival_db # Study Survival 전용 데이터베이스 생성
+      MYSQL_DATABASE: study_survival_db
     ports:
-      - "3308:3306"                     # 내 컴퓨터와 컨테이너 간의 DB 포트 연결
+      - "3308:3306"          # PC의 3308번 포트와 컨테이너의 3306번 포트 연결
     volumes:
-      - ./mysql/data:/var/lib/mysql     # 학생들의 생존 상태 및 디데이 데이터를 안전하게 보존 (볼륨 마운트)
-      - ./mysql/conf:/etc/mysql/conf.d   # MySQL 세부 환경 설정 파일 매핑
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf:/etc/mysql/conf.d
     networks:
-      - app-network                     # 컨테이너 간 안전한 통신을 위한 가상 네트워크 연결
+      - app-network
 
-  # 2. 프론트엔드 웹 컨테이너 (Nginx 기반)
+  # 웹 서버(Nginx) 컨테이너
   web:
-    build: ./web                        # web 폴더 안에 있는 Dockerfile을 기반으로 빌드
+    build: ./web
     container_name: study-survival-web
     restart: always
     ports:
-      - "80:80"                         # 브라우저에서 바로 접속할 수 있게 포트 개방
+      - "80:80"              # 브라우저에서 접속할 포트
     volumes:
-      - ./web/src:/usr/share/nginx/html # 내가 만든 HTML, CSS, JS 소스코드가 화면에 실시간 반영되도록 매핑
+      - ./web/src:/usr/share/nginx/html
     networks:
-      - app-network                     # mysql 컨테이너와 비밀리에 통신할 수 있도록 같은 가상 네트워크 지정
+      - app-network
     depends_on:
-      - mysql                           # DB가 먼저 완벽히 켜진 다음에 웹 서버가 켜지도록 순서 보장
+      - mysql                # MySQL이 먼저 실행된 후 웹 서버 실행
 
-# 컨테이너 간 독립된 통신망 구축
+# 두 컨테이너가 서로 통신할 수 있는 가상 네트워크
 networks:
   app-network:
-    driver: bridge                      # 브릿지 드라이버를 사용하여 격리된 네트워크 형성
+    driver: bridge
